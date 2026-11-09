@@ -1,5 +1,5 @@
 # Build the CAPDO controller image from this fork and push it to GHCR.
-# Uses the built-in GITHUB_TOKEN (packages\:write) — no PAT or SSH keys needed.
+# Uses the built-in GITHUB_TOKEN (packages:write) — no PAT or SSH keys needed.
 name: build-push-ghcr
 
 on:
@@ -45,7 +45,7 @@ jobs:
             echo "TAGS<<EOF"
             echo "ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${TAG}"
             echo "ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${TAG}-${GITHUB_SHA::7}"
-            echo "ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}\:main"
+            echo "ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:main"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
